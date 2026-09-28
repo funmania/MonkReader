@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — MonkReader</title>
+  <meta name="description" content="Privacy Policy for MonkReader: an on-device listening app. Your documents stay on your device. No ads, no cross-app tracking, no sale of personal data.">
+  <meta name="theme-color" content="#121214">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="MonkReader home">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><span class="brand-name">MonkReader</span>
+        <span class="brand-sub">Listen to your documents, on-device</span></span>
+      </a>
+      <nav class="nav" aria-label="Legal">
+        <a href="index.html" aria-current="page">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </header>
+
+    <main>
+      <span class="badge">App Store Connect privacy-policy URL — MonkReader</span>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: September 28, 2026 &middot; Applies to MonkReader for iOS, macOS &amp; Android</p>
+      <p class="lede">MonkReader turns your documents into speech on your device. We collect the minimum needed to run the app, never sell your data, show no ads, and do not track you across other apps or websites.</p>
+
+      <nav class="toc" aria-label="Contents">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#documents">Your documents &amp; audio</a></li>
+          <li><a href="#sync">Reading-position sync</a></li>
+          <li><a href="#account">Account</a></li>
+          <li><a href="#analytics">Analytics &amp; crashes</a></li>
+          <li><a href="#purchases">Purchases</a></li>
+          <li><a href="#referrals">Referrals &amp; invites</a></li>
+          <li><a href="#permissions">Device permissions</a></li>
+          <li><a href="#network">Network sources</a></li>
+          <li><a href="#never">What we never do</a></li>
+          <li><a href="#retention">Retention &amp; deletion</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes &amp; contact</a></li>
+        </ol>
+      </nav>
+
+      <section class="card" id="documents">
+        <h2><span class="num">01</span>Your documents &amp; audio</h2>
+        <p>Books, PDFs, scans, and other files you add <strong>stay on your device</strong>. Text extraction, optical character recognition (OCR), translation packs, and speech synthesis all run on-device. Generated audio files and imported documents are stored locally in the app's protected storage and <strong>never leave the device</strong>.</p>
+        <p>When you open a file with MonkReader — via the file picker, drag &amp; drop, the Share extension, or an <code>bard://</code> / <code>monkreader://</code> link — only files you explicitly choose are copied into the app's private inbox and library.</p>
+      </section>
+
+      <section class="card" id="sync">
+        <h2><span class="num">02</span>Reading-position sync</h2>
+        <p>Only your <strong>place in each document</strong> (a book identifier plus playback position), your favorites, and your collections sync — through <strong>your own iCloud account (CloudKit private database)</strong> — so you can resume on another device. Your files, document text, and audio do not sync.</p>
+        <p>Sync is last-writer-wins, throttled, and silent: if iCloud is unavailable or signed out, the app simply keeps working locally. Turn off iCloud for MonkReader in system Settings at any time to stop sync.</p>
+      </section>
+
+      <section class="card" id="account">
+        <h2><span class="num">03</span>Account</h2>
+        <p>There is <strong>no email login</strong>. If cloud features (referral rewards, settings sync) are enabled, the app signs in <strong>anonymously</strong> with Firebase Authentication — a random ID per install with no name, email, or phone number — used only to protect referral rewards and sync settings.</p>
+        <p>Without cloud configuration, the app runs fully locally with no account at all.</p>
+      </section>
+
+      <section class="card" id="analytics">
+        <h2><span class="num">04</span>Analytics &amp; crashes</h2>
+        <p>To fix bugs and improve the app we use <strong>Firebase Analytics (Google Analytics for Firebase)</strong>, <strong>Firebase Crashlytics</strong>, and <strong>Firebase Remote Config</strong>. Collected:</p>
+        <ul>
+          <li><strong>Anonymous usage events</strong> — e.g. import succeeded/failed, playback started/paused/finished, purchase completed, search performed. Parameters are bucketed counts and categories only (e.g. page-count range, script family, duration bucket), plus app version, platform, and a rotated per-session ID.</li>
+          <li><strong>Crash reports and diagnostics</strong> — stack traces plus non-fatal breadcrumbs (e.g. purchase/import/translate steps) with custom keys limited to tier, storefront, and session ID.</li>
+          <li><strong>Remote configuration</strong> — e.g. referral grant amounts, feature flags such as <code>analytics_enabled</code>, cached on-device.</li>
+        </ul>
+        <p>Events <strong>never include</strong> document text, titles of your personal files, voice-sample audio, invite-code values, user IDs, or payment details. Analytics collection can be disabled remotely and the app keeps working. Crash reports are queued offline by the SDK and sent when connectivity returns.</p>
+      </section>
+
+      <section class="card" id="purchases">
+        <h2><span class="num">05</span>Purchases</h2>
+        <p>Payments are processed <strong>entirely by Apple (App Store / StoreKit) on iOS &amp; macOS, and by Google Play Billing on Android</strong>. We never see or store your card, bank, or store-account credentials — only whether an auto-renewable subscription is active and how many listening hours were granted to your on-device wallet.</p>
+        <p>Manage or cancel subscriptions anytime in iOS Settings &rarr; Apple ID &rarr; Subscriptions (or Google Play &rarr; Payments &amp; subscriptions). Use Restore Purchases from the paywall to re-activate entitlements. See the <a href="terms.html">Terms of Use</a> for pack and subscription details.</p>
+      </section>
+
+      <section class="card" id="referrals">
+        <h2><span class="num">06</span>Referrals &amp; invites</h2>
+        <p>Invite codes and a hashed device identifier are used <strong>only</strong> to grant earned listening hours and prevent abuse (monthly and lifetime caps apply, shown in the app). Codes contain no personal information. Claim records store only the code, an anonymous receiver ID, and a timestamp — never document content.</p>
+      </section>
+
+      <section class="card" id="permissions">
+        <h2><span class="num">07</span>Device permissions</h2>
+        <ul>
+          <li><strong>Microphone (optional)</strong> — used only to record a short 5–30 second voice sample if you choose to create a custom voice. The sample stays on your device and is never uploaded or used for monetization.</li>
+          <li><strong>Files &amp; media (only when you choose)</strong> — user-selected documents via the picker, Share extension, or Open-In. No photo-library, camera, contacts, calendar, location, Bluetooth, or motion access.</li>
+          <li><strong>Background audio</strong> — so listening continues with the screen locked.</li>
+          <li><strong>Siri, Spotlight &amp; widgets</strong> — on-device shortcuts (“Continue Listening”), searchable titles of books you added, and a Now-Playing widget fed from an on-device snapshot. No network involved.</li>
+          <li><strong>Notifications (local only)</strong> — a single on-device notice (e.g. “Translation paused — unlock to continue”). No push notifications, no push tokens.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="network">
+        <h2><span class="num">08</span>Network sources</h2>
+        <p>The app contacts the network only for things you request or that keep the app working:</p>
+        <ul>
+          <li>Public-domain catalog search, book downloads, and cover art (e.g. Open Library, Internet Archive, Project Gutenberg, Wikipedia) when you browse Discover or add a book.</li>
+          <li>One-time downloads of voice models and OCR data (e.g. Hugging Face) when you install a voice or language.</li>
+          <li>Firebase services listed above, only when cloud features are configured.</li>
+        </ul>
+        <p>Your documents, audio, and voice samples are never uploaded. You can override or self-host the catalog search endpoint from settings.</p>
+      </section>
+
+      <section class="card" id="never">
+        <h2><span class="num">09</span>What we never do</h2>
+        <ul>
+          <li>No advertising identifier (IDFA) is collected. No ads, no ad SDKs.</li>
+          <li>No cross-app or cross-site tracking, no data brokers.</li>
+          <li>No sale or rental of personal data.</li>
+          <li>No access to microphone, camera, contacts, photos, or location for monetization — microphone is used solely for optional voice cloning, on-device.</li>
+        </ul>
+        <table class="labels" aria-label="Apple privacy label summary">
+          <tr><th>Data linked to you</th><td>None declared. Analytics and diagnostics are anonymous and bucketed; purchases are processed by Apple/Google.</td></tr>
+          <tr><th>Tracking</th><td>No tracking across other companies' apps or websites (<code>NSPrivacyTracking = false</code>).</td></tr>
+        </table>
+      </section>
+
+      <section class="card" id="retention">
+        <h2><span class="num">10</span>Retention &amp; your choices</h2>
+        <ul>
+          <li><strong>Delete the app</strong> to remove on-device data (library, audio cache, voices, settings).</li>
+          <li><strong>Turn off iCloud</strong> for MonkReader in system Settings to stop position sync and delete synced CloudKit records.</li>
+          <li><strong>Subscriptions:</strong> manage or cancel anytime in iOS Settings &rarr; Apple ID &rarr; Subscriptions (or Google Play). Restore purchases anytime from the paywall.</li>
+          <li><strong>Spotlight &amp; Siri:</strong> donated shortcuts and indexed titles can be removed from iOS Settings &rarr; Siri &amp; Search.</li>
+          <li>Anonymous analytics events and crash reports are retained by Firebase per Google's retention schedules in aggregated form and cannot be linked back to your documents.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="children">
+        <h2><span class="num">11</span>Children</h2>
+        <p>MonkReader is a general-audience reading tool and is not directed at children under 13 (or the minimum age in your jurisdiction). No child data is knowingly collected. If you believe a child has provided data in error, contact us via the App Store listing so we can address it.</p>
+      </section>
+
+      <section class="card" id="changes">
+        <h2><span class="num">12</span>Changes &amp; contact</h2>
+        <p>If this policy changes materially, we will update the “Last updated” date above and, where appropriate, notify you in the app or on this page before the change takes effect.</p>
+        <p><strong>Questions about this policy:</strong> contact us through the App Store listing for MonkReader. The same policy text is available inside the app (Settings &rarr; Privacy Policy).</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 MonkReader. All rights reserved.</span>
+      <nav aria-label="Footer">
+        <a href="index.html" aria-current="page">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

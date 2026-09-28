@@ -1,0 +1,124 @@
+/* MonkReader legal pages — Quiet Luxury: warm paper, ink, brass. No dependencies. */
+:root {
+  --paper: #f7f5f0;
+  --paper-2: #efeae1;
+  --ink: #121214;
+  --ink-soft: rgba(18, 18, 20, 0.64);
+  --ink-faint: rgba(18, 18, 20, 0.44);
+  --card: rgba(18, 18, 20, 0.04);
+  --hairline: rgba(18, 18, 20, 0.12);
+  --brass: #9a7b4f;
+  --brass-deep: #7c6240;
+  --radius: 18px;
+  --max: 780px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121214;
+    --paper-2: #1a1a1c;
+    --ink: #f2ede3;
+    --ink-soft: rgba(255, 255, 255, 0.62);
+    --ink-faint: rgba(255, 255, 255, 0.42);
+    --card: rgba(255, 255, 255, 0.05);
+    --hairline: rgba(255, 255, 255, 0.12);
+    --brass: #c7a87a;
+    --brass-deep: #c7a87a;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px 80px; }
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0 14px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 28px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 12px;
+  background: linear-gradient(145deg, #1c1c1e, #2a2a2d);
+  color: #c7a87a; display: grid; place-items: center;
+  font-family: Georgia, "Times New Roman", serif; font-size: 22px;
+  border: 1px solid var(--hairline);
+}
+.brand-name { font-family: Georgia, "Times New Roman", serif; font-size: 20px; letter-spacing: 0.01em; }
+.brand-sub { display: block; font-family: -apple-system, sans-serif; font-size: 12px; color: var(--ink-faint); }
+.nav { display: flex; gap: 8px; }
+.nav a {
+  text-decoration: none; color: var(--ink-soft); font-size: 14px;
+  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--hairline);
+}
+.nav a[aria-current="page"] { color: var(--ink); border-color: var(--brass); }
+.nav a:hover { color: var(--ink); }
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400; font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.12; margin: 18px 0 6px; letter-spacing: -0.01em;
+}
+.updated { color: var(--ink-faint); font-size: 13.5px; margin: 0 0 20px; }
+.lede {
+  font-family: Georgia, "Times New Roman", serif; font-size: 19px; line-height: 1.6;
+  color: var(--ink-soft); margin: 0 0 26px;
+  border-left: 3px solid var(--brass); padding-left: 16px;
+}
+.toc {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: var(--radius); padding: 16px 20px; margin: 0 0 28px;
+}
+.toc p { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; font-size: 14.5px; }
+.toc li { margin: 3px 0; }
+.toc a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--hairline); }
+.toc a:hover { color: var(--brass-deep); }
+section.card {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: var(--radius); padding: 20px 22px; margin: 0 0 16px;
+}
+section.card h2 {
+  font-family: Georgia, "Times New Roman", serif; font-weight: 400;
+  font-size: 22px; margin: 0 0 8px;
+}
+section.card h2 .num {
+  color: var(--brass); font-size: 15px; vertical-align: middle; margin-right: 8px;
+  font-family: -apple-system, sans-serif;
+}
+section.card p, section.card li { color: var(--ink-soft); font-size: 15.5px; }
+section.card ul { padding-left: 20px; margin: 8px 0; }
+section.card li { margin: 4px 0; }
+section.card strong { color: var(--ink); font-weight: 600; }
+a { color: var(--brass-deep); }
+@media (prefers-color-scheme: dark) { a { color: var(--brass); } }
+table.labels { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 10px; }
+table.labels th, table.labels td {
+  text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hairline);
+  color: var(--ink-soft); vertical-align: top;
+}
+table.labels th { color: var(--ink); font-weight: 600; white-space: nowrap; }
+footer {
+  margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--hairline);
+  display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; justify-content: space-between;
+  color: var(--ink-faint); font-size: 13.5px;
+}
+footer nav { display: flex; gap: 16px; }
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer a:hover { color: var(--brass-deep); }
+.badge {
+  display: inline-block; font-size: 12.5px; padding: 3px 10px; border-radius: 999px;
+  border: 1px solid var(--brass); color: var(--brass-deep); margin-bottom: 4px;
+}
+@media (prefers-color-scheme: dark) { .badge { color: var(--brass); } }
+@media (max-width: 560px) { .toc ol { columns: 1; } }
+@media print {
+  body { background: #fff; color: #000; }
+  .topbar .nav, .toc { display: none; }
+  section.card { break-inside: avoid; background: none; }
+}
