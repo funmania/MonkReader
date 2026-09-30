@@ -23,9 +23,9 @@
     </header>
 
     <main>
-      <span class="badge">App Store Connect privacy-policy URL — MonkReader</span>
+      <span class="badge">Privacy-policy URL for App Store Connect &amp; Google Play — MonkReader</span>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: September 28, 2026 &middot; Applies to MonkReader for iOS, macOS &amp; Android</p>
+      <p class="updated">Last updated: September 30, 2026 &middot; Applies to MonkReader for iOS, macOS &amp; Android</p>
       <p class="lede">MonkReader turns your documents into speech on your device. We collect the minimum needed to run the app, never sell your data, show no ads, and do not track you across other apps or websites.</p>
 
       <nav class="toc" aria-label="Contents">
@@ -54,8 +54,8 @@
 
       <section class="card" id="sync">
         <h2><span class="num">02</span>Reading-position sync</h2>
-        <p>Only your <strong>place in each document</strong> (a book identifier plus playback position), your favorites, and your collections sync — through <strong>your own iCloud account (CloudKit private database)</strong> — so you can resume on another device. Your files, document text, and audio do not sync.</p>
-        <p>Sync is last-writer-wins, throttled, and silent: if iCloud is unavailable or signed out, the app simply keeps working locally. Turn off iCloud for MonkReader in system Settings at any time to stop sync.</p>
+        <p>Only your <strong>place in each document</strong> (a book identifier plus playback position), your favorites, and your collections sync — through <strong>your own iCloud account (CloudKit private database) on iOS &amp; macOS</strong> — so you can resume on another Apple device. Your files, document text, and audio do not sync.</p>
+        <p>Sync is last-writer-wins, throttled, and silent: if iCloud is unavailable or signed out, the app simply keeps working locally. Turn off iCloud for MonkReader in system Settings at any time to stop sync. <strong>On Android there is no cross-device sync:</strong> your reading position, library, and audio stay only on that device.</p>
       </section>
 
       <section class="card" id="account">
@@ -66,7 +66,7 @@
 
       <section class="card" id="analytics">
         <h2><span class="num">04</span>Analytics &amp; crashes</h2>
-        <p>To fix bugs and improve the app we use <strong>Firebase Analytics (Google Analytics for Firebase)</strong>, <strong>Firebase Crashlytics</strong>, and <strong>Firebase Remote Config</strong>. Collected:</p>
+        <p>To fix bugs and improve the app we use <strong>Firebase Analytics (Google Analytics for Firebase)</strong>, <strong>Firebase Crashlytics</strong>, and <strong>Firebase Remote Config</strong> — the same stack on iOS, macOS, and Android. Collected:</p>
         <ul>
           <li><strong>Anonymous usage events</strong> — e.g. import succeeded/failed, playback started/paused/finished, purchase completed, search performed. Parameters are bucketed counts and categories only (e.g. page-count range, script family, duration bucket), plus app version, platform, and a rotated per-session ID.</li>
           <li><strong>Crash reports and diagnostics</strong> — stack traces plus non-fatal breadcrumbs (e.g. purchase/import/translate steps) with custom keys limited to tier, storefront, and session ID.</li>
@@ -78,7 +78,7 @@
       <section class="card" id="purchases">
         <h2><span class="num">05</span>Purchases</h2>
         <p>Payments are processed <strong>entirely by Apple (App Store / StoreKit) on iOS &amp; macOS, and by Google Play Billing on Android</strong>. We never see or store your card, bank, or store-account credentials — only whether an auto-renewable subscription is active and how many listening hours were granted to your on-device wallet.</p>
-        <p>Manage or cancel subscriptions anytime in iOS Settings &rarr; Apple ID &rarr; Subscriptions (or Google Play &rarr; Payments &amp; subscriptions). Use Restore Purchases from the paywall to re-activate entitlements. See the <a href="terms.html">Terms of Use</a> for pack and subscription details.</p>
+        <p>Manage or cancel subscriptions anytime: on iOS in Settings &rarr; Apple ID &rarr; Subscriptions; on Android in the Play Store app &rarr; profile &rarr; Payments &amp; subscriptions &rarr; Subscriptions. Use Restore Purchases from the paywall to re-activate entitlements on your store account. See the <a href="terms.html">Terms of Use</a> for pack and subscription details.</p>
       </section>
 
       <section class="card" id="referrals">
@@ -89,11 +89,13 @@
       <section class="card" id="permissions">
         <h2><span class="num">07</span>Device permissions</h2>
         <ul>
-          <li><strong>Microphone (optional)</strong> — used only to record a short 5–30 second voice sample if you choose to create a custom voice. The sample stays on your device and is never uploaded or used for monetization.</li>
-          <li><strong>Files &amp; media (only when you choose)</strong> — user-selected documents via the picker, Share extension, or Open-In. No photo-library, camera, contacts, calendar, location, Bluetooth, or motion access.</li>
-          <li><strong>Background audio</strong> — so listening continues with the screen locked.</li>
-          <li><strong>Siri, Spotlight &amp; widgets</strong> — on-device shortcuts (“Continue Listening”), searchable titles of books you added, and a Now-Playing widget fed from an on-device snapshot. No network involved.</li>
-          <li><strong>Notifications (local only)</strong> — a single on-device notice (e.g. “Translation paused — unlock to continue”). No push notifications, no push tokens.</li>
+          <li><strong>Microphone — optional, voice clone only.</strong> Used solely to record a short 5–30 second voice sample if you choose to create a custom voice (iOS microphone access / Android <code>RECORD_AUDIO</code>; microphone hardware is not required to use the app). The sample stays on your device and is never uploaded or used for monetization.</li>
+          <li><strong>Files you choose — nothing broad.</strong> On iOS via the file picker, Share extension, Open-In, or drag &amp; drop; on Android via the system file picker, Share intents (<code>SEND</code>), or Open-With (<code>VIEW</code>) from Files, Drive, or Mail. The app declares no broad storage, photo-library, camera, contacts, calendar, location, Bluetooth, or motion access.</li>
+          <li><strong>Background audio.</strong> iOS background-audio mode, or an Android foreground service (media playback) with a persistent notification, so listening continues with the screen locked.</li>
+          <li><strong>Network (Android <code>INTERNET</code>).</strong> Only for the catalog, model, and Firebase uses described in §8 — your documents and audio are never uploaded.</li>
+          <li><strong>Audio files you import (Android <code>READ_MEDIA_AUDIO</code>).</strong> Only to open audio files you explicitly share with or import into the app.</li>
+          <li><strong>On-device assistance (Apple only).</strong> Siri shortcuts (“Continue Listening”), Spotlight titles of books you added, and a Now-Playing widget fed from an on-device snapshot. No network involved.</li>
+          <li><strong>Notifications — local only.</strong> On-device notices such as playback status or “Translation paused — unlock to continue” (Android <code>POST_NOTIFICATIONS</code>). No push notifications, no push tokens, no Firebase Cloud Messaging.</li>
         </ul>
       </section>
 
@@ -102,7 +104,7 @@
         <p>The app contacts the network only for things you request or that keep the app working:</p>
         <ul>
           <li>Public-domain catalog search, book downloads, and cover art (e.g. Open Library, Internet Archive, Project Gutenberg, Wikipedia) when you browse Discover or add a book.</li>
-          <li>One-time downloads of voice models and OCR data (e.g. Hugging Face) when you install a voice or language.</li>
+          <li>One-time downloads of voice models and OCR data — direct download on Apple platforms, Google Play Asset Delivery on Android — when you install a voice or language.</li>
           <li>Firebase services listed above, only when cloud features are configured.</li>
         </ul>
         <p>Your documents, audio, and voice samples are never uploaded. You can override or self-host the catalog search endpoint from settings.</p>
@@ -111,37 +113,37 @@
       <section class="card" id="never">
         <h2><span class="num">09</span>What we never do</h2>
         <ul>
-          <li>No advertising identifier (IDFA) is collected. No ads, no ad SDKs.</li>
+          <li>No advertising identifier is collected (no IDFA on iOS; the Android Advertising ID permission is not declared or used). No ads, no ad SDKs.</li>
           <li>No cross-app or cross-site tracking, no data brokers.</li>
-          <li>No sale or rental of personal data.</li>
+          <li>No sale or rental of personal data, and no data shared with third parties for advertising.</li>
           <li>No access to microphone, camera, contacts, photos, or location for monetization — microphone is used solely for optional voice cloning, on-device.</li>
         </ul>
         <table class="labels" aria-label="Apple privacy label summary">
-          <tr><th>Data linked to you</th><td>None declared. Analytics and diagnostics are anonymous and bucketed; purchases are processed by Apple/Google.</td></tr>
-          <tr><th>Tracking</th><td>No tracking across other companies' apps or websites (<code>NSPrivacyTracking = false</code>).</td></tr>
+          <tr><th>Apple privacy labels</th><td>Data Not Collected. Analytics and diagnostics are anonymous and bucketed; purchases are processed by Apple/Google. No tracking across other companies' apps or websites (<code>NSPrivacyTracking = false</code>).</td></tr>
+          <tr><th>Google Play Data safety</th><td>No personal info collected or shared. Anonymous app-activity analytics and crash diagnostics (not linked to your identity); financial info is handled solely by Google Play Billing. Data in transit is encrypted. No account, so no account-deletion flow — delete the app to remove on-device data.</td></tr>
         </table>
       </section>
 
       <section class="card" id="retention">
         <h2><span class="num">10</span>Retention &amp; your choices</h2>
         <ul>
-          <li><strong>Delete the app</strong> to remove on-device data (library, audio cache, voices, settings).</li>
-          <li><strong>Turn off iCloud</strong> for MonkReader in system Settings to stop position sync and delete synced CloudKit records.</li>
-          <li><strong>Subscriptions:</strong> manage or cancel anytime in iOS Settings &rarr; Apple ID &rarr; Subscriptions (or Google Play). Restore purchases anytime from the paywall.</li>
-          <li><strong>Spotlight &amp; Siri:</strong> donated shortcuts and indexed titles can be removed from iOS Settings &rarr; Siri &amp; Search.</li>
+          <li><strong>Delete the app</strong> to remove on-device data (library, audio cache, voices, settings). On Android the app opts out of cloud backup, so uninstalling removes everything — nothing is backed up to your Google account.</li>
+          <li><strong>Turn off iCloud</strong> for MonkReader in system Settings (iOS &amp; macOS) to stop position sync and delete synced CloudKit records.</li>
+          <li><strong>Subscriptions:</strong> manage or cancel anytime — iOS Settings &rarr; Apple ID &rarr; Subscriptions, or Play Store &rarr; profile &rarr; Payments &amp; subscriptions &rarr; Subscriptions. Restore purchases anytime from the paywall.</li>
+          <li><strong>Spotlight &amp; Siri (Apple only):</strong> donated shortcuts and indexed titles can be removed from iOS Settings &rarr; Siri &amp; Search.</li>
           <li>Anonymous analytics events and crash reports are retained by Firebase per Google's retention schedules in aggregated form and cannot be linked back to your documents.</li>
         </ul>
       </section>
 
       <section class="card" id="children">
         <h2><span class="num">11</span>Children</h2>
-        <p>MonkReader is a general-audience reading tool and is not directed at children under 13 (or the minimum age in your jurisdiction). No child data is knowingly collected. If you believe a child has provided data in error, contact us via the App Store listing so we can address it.</p>
+        <p>MonkReader is a general-audience reading tool and is not directed at children under 13 (or the minimum age in your jurisdiction). No child data is knowingly collected. If you believe a child has provided data in error, contact us via the App Store or Google Play listing so we can address it.</p>
       </section>
 
       <section class="card" id="changes">
         <h2><span class="num">12</span>Changes &amp; contact</h2>
         <p>If this policy changes materially, we will update the “Last updated” date above and, where appropriate, notify you in the app or on this page before the change takes effect.</p>
-        <p><strong>Questions about this policy:</strong> contact us through the App Store listing for MonkReader. The same policy text is available inside the app (Settings &rarr; Privacy Policy).</p>
+        <p><strong>Questions about this policy:</strong> contact us through the App Store or Google Play listing for MonkReader. The same policy text is available inside the app (Settings &rarr; Privacy Policy).</p>
       </section>
     </main>
 
