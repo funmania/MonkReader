@@ -4,39 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MonkReader — Get the app</title>
-<meta name="description" content="MonkReader turns classics and your documents into speech, on-device. Get it on the App Store or Google Play.">
+<meta name="description" content="MonkReader turns classics and your documents into speech, on-device. Download on the App Store or get it on Google Play.">
 <meta name="theme-color" content="#121214">
 
 <!--
-  ═══════════════════════════════════════════════════════════════════
-  MONKREADER SMART LINK — one bio link for Instagram / YouTube / TikTok
-  ═══════════════════════════════════════════════════════════════════
-  HOW IT WORKS
-    iPhone / iPad / Mac  → App Store (auto-redirect)
-    Android              → Google Play (auto-redirect, once ANDROID_URL set)
-    Desktop / unknown    → landing page with both store buttons (no redirect)
+  MONKREADER SMART LINK — one bio link for Instagram / YouTube / TikTok.
+  iPhone/iPad → App Store. Android → Google Play (once ANDROID_URL is set).
+  Anything else → both badges, no redirect.
 
-  GOING LIVE (Android is in review right now — this page already works)
-    1. The day Play approves the app, paste its URL into ANDROID_URL below.
-       That's the ONLY change needed. The bio link stays the same.
-    2. iOS needs no change: it uses the same App Store listing as the live
-       Mac app (id6804973353), so it lights up automatically on approval.
-
-  TESTING (no device lab needed)
-    ?store=ios      pretend to be an iPhone
-    ?store=android  pretend to be an Android phone
-    ?store=desktop  pretend to be a desktop browser
-    ?noredirect=1   show the landing page without auto-redirecting
-    Combine: ?store=android&noredirect=1
-
-  DEPLOYED COPY
-    This file is deployed from the Privacy repo (GitHub Pages) so the bio
-    link is public and stable. Keep the Marketing/post-kit/app-link/ copy
-    in sync — same file, same icon.png next to it.
-
-  NOTE ON QUERY PARAMS (?, e.g. ?utm_source=instagram)
-    They are harmless but are NOT forwarded to the stores — Apple/Google
-    strip unknown params. Keep them if you add page analytics later.
+  ANDROID LAUNCH: paste the Play Store URL into ANDROID_URL below. Only change needed.
+  TESTING: ?store=ios | ?store=android | ?store=desktop, ?noredirect=1 to preview.
+  Deployed from the Privacy repo (GitHub Pages). Keep Marketing/post-kit/app-link/ in sync.
 -->
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
@@ -45,24 +23,24 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MonkReader">
 <meta property="og:title" content="MonkReader — Classics, read aloud">
-<meta property="og:description" content="Any PDF, just press play. Get MonkReader on the App Store or Google Play.">
+<meta property="og:description" content="Any PDF, just press play. Download on the App Store or get it on Google Play.">
 <meta property="og:url" content="https://funmania.github.io/MonkReader/app-link/">
 <meta property="og:image" content="https://funmania.github.io/MonkReader/app-link/icon.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MonkReader — Classics, read aloud">
-<meta name="twitter:description" content="Any PDF, just press play. Get MonkReader on the App Store or Google Play.">
+<meta name="twitter:description" content="Any PDF, just press play. Download on the App Store or get it on Google Play.">
 <meta name="twitter:image" content="https://funmania.github.io/MonkReader/app-link/icon.png">
 <style>
   :root {
     --paper: #f7f5f0; --ink: #121214; --soft: rgba(18,18,20,.64);
     --faint: rgba(18,18,20,.44); --hairline: rgba(18,18,20,.12);
-    --brass: #9a7b4f; --brass-deep: #7c6240; --btn-ink: #121214;
+    --brass: #9a7b4f; --brass-deep: #7c6240;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --paper: #121214; --ink: #f2ede3; --soft: rgba(255,255,255,.62);
       --faint: rgba(255,255,255,.42); --hairline: rgba(255,255,255,.14);
-      --brass: #c7a87a; --brass-deep: #c7a87a; --btn-ink: #f2ede3;
+      --brass: #c7a87a; --brass-deep: #c7a87a;
     }
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -85,33 +63,29 @@
     font-size: 30px; letter-spacing: -.01em; margin: 20px 0 4px;
   }
   p.sub { color: var(--faint); font-size: 16px; margin-bottom: 18px; }
-  p.status { color: var(--soft); font-size: 15px; min-height: 24px; margin-bottom: 14px; }
+  p.status { color: var(--soft); font-size: 15px; min-height: 24px; margin-bottom: 12px; }
   .spinner {
-    width: 22px; height: 22px; margin: 0 auto 14px; border-radius: 50%;
+    width: 22px; height: 22px; margin: 0 auto 12px; border-radius: 50%;
     border: 2.5px solid var(--hairline); border-top-color: var(--brass);
     animation: spin 0.9s linear infinite;
   }
   @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
   @keyframes spin { to { transform: rotate(360deg); } }
-  a.btn {
-    display: block; margin: 10px auto; max-width: 320px;
-    padding: 15px 20px; border-radius: 999px; text-decoration: none;
-    font-size: 17px; font-weight: 600;
+  a.store {
+    display: block; margin: 10px auto; max-width: 280px;
+    background: #000; color: #fff; border: 1px solid rgba(255,255,255,.12);
+    border-radius: 10px; padding: 10px 16px; text-decoration: none;
   }
-  a.btn:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
-  a.primary { background: var(--btn-ink); color: var(--paper); }
-  @media (prefers-color-scheme: dark) { a.primary { background: #f2ede3; color: #121214; } }
-  a.ghost { border: 2px solid var(--brass); color: var(--ink); font-weight: 500; }
-  a.disabled { opacity: .55; }
+  a.store:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+  a.store .t1 { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+  a.store .t2 { display: block; font-size: 22px; font-weight: 600; line-height: 1.25; }
+  a.store.disabled { opacity: .55; }
   .soon {
-    margin: 16px auto 0; max-width: 340px; font-size: 14px; line-height: 1.6;
+    margin: 14px auto 0; max-width: 340px; font-size: 14px; line-height: 1.6;
     color: var(--soft); border: 1px dashed var(--brass);
     border-radius: 14px; padding: 12px 16px;
   }
-  .hint {
-    margin: 16px auto 0; max-width: 340px; font-size: 13.5px; line-height: 1.6;
-    color: var(--faint);
-  }
+  .hint { margin: 14px auto 0; max-width: 340px; font-size: 13.5px; line-height: 1.6; color: var(--faint); }
   footer { margin-top: 26px; font-size: 13px; color: var(--faint); }
   footer a { color: var(--soft); text-decoration: none; margin: 0 8px; }
   footer a:hover { color: var(--brass-deep); }
@@ -124,106 +98,85 @@
   <p class="sub">Classics, read aloud.</p>
   <div class="spinner" id="spin" aria-hidden="true"></div>
   <p class="status" id="status" role="status" aria-live="polite">Finding your store…</p>
-  <a class="btn primary" id="bMain" href="https://apps.apple.com/app/monkreader/id6804973353">Get the app</a>
-  <a class="btn ghost" id="bAlt" href="https://apps.apple.com/app/monkreader/id6804973353" hidden>Other platform</a>
+  <a class="store" id="bApple" href="https://apps.apple.com/app/monkreader/id6804973353"><span class="t1">Download on the</span><span class="t2">App Store</span></a>
+  <a class="store" id="bPlay" href="#"><span class="t1">Get it on</span><span class="t2">Google Play</span></a>
   <p class="soon" id="soon" hidden></p>
   <p class="hint" id="hint" hidden>Opened inside Instagram&nbsp;/ TikTok&nbsp;/ YouTube? If the store doesn’t open, tap <strong>···</strong> (top&nbsp;right) → “Open in browser”, then try again.</p>
-  <noscript><p class="soon">JavaScript is off, so pick your store above — either button works without it.</p></noscript>
   <footer><a href="https://funmania.github.io/MonkReader/">Privacy</a>·<a href="https://funmania.github.io/MonkReader/terms.html">Terms</a></footer>
 </main>
 <script>
 (function () {
   "use strict";
 
-  // ── Store URLs ────────────────────────────────────────────────
   var IOS_URL = "https://apps.apple.com/app/monkreader/id6804973353";
   // TODO(Android launch): paste the Play Store URL the day it goes live, e.g.
   //   "https://play.google.com/store/apps/details?id=com.example.monkreader"
-  // Until then Android visitors see "coming soon" (never a broken redirect).
   var ANDROID_URL = "";
 
-  // ── Pure detection (unit-tested in node; keep logic in sync) ──
-  function detectPlatform(ua, maxTouch, hadTouch) {
+  function isAndroid(ua) { return /Android/i.test(ua || ""); }
+  function isApplePhone(ua, maxTouch) {
     ua = ua || "";
-    if (/Android/i.test(ua)) return "android";
-    if (/iPhone|iPad|iPod/i.test(ua)) return "ios";
+    if (/iPhone|iPad|iPod/i.test(ua)) return true;
     // iPadOS 13+ in desktop mode reports "Macintosh" — touch gives it away.
-    if (/Macintosh|Mac OS X/i.test(ua) && ((maxTouch || 0) > 1 || hadTouch === true)) return "ios";
-    if (/Macintosh|Mac OS X/i.test(ua)) return "mac";
-    if (/Windows|Linux|CrOS|CrOS x86_64|PlayStation|Xbox|Nintendo/i.test(ua)) return "desktop";
-    if (/Mobile/i.test(ua)) return "ios"; // unknown phone: App Store is live today
-    return "desktop";
+    if (/Macintosh|Mac OS X/i.test(ua) && (maxTouch || 0) > 1) return true;
+    return /Mobile/i.test(ua) && !isAndroid(ua);
   }
   function isInApp(ua) {
     return /Instagram|FBAN|FBAV|FB_IAB|TikTok|Musical\.ly|Snapchat|YouTube|Line\/|MicroMessenger|WeChat|Weibo|Twitter|Pinterest|LinkedIn|Discord|Telegram|WhatsApp|KAKAOTALK|Naver|ByteDance/i.test(ua || "");
   }
 
-  // ── Inputs ────────────────────────────────────────────────────
   var ua = navigator.userAgent || "";
   var touch = navigator.maxTouchPoints || 0;
   var params = new URLSearchParams(location.search);
   var force = (params.get("store") || "").toLowerCase();
   var noRedirect = params.has("noredirect") || params.get("redirect") === "0";
-  var platform = (force === "ios" || force === "android" || force === "mac" || force === "desktop")
-    ? force : detectPlatform(ua, touch, false);
 
-  // ── Render ────────────────────────────────────────────────────
+  var android = force === "android" ? true : force === "ios" || force === "desktop" ? false : isAndroid(ua);
+  var applePhone = force === "ios" ? true : force === "android" || force === "desktop" ? false : isApplePhone(ua, touch);
+
   var status = document.getElementById("status");
   var spin = document.getElementById("spin");
-  var main = document.getElementById("bMain");
-  var alt = document.getElementById("bAlt");
+  var bApple = document.getElementById("bApple");
+  var bPlay = document.getElementById("bPlay");
   var soon = document.getElementById("soon");
   var hint = document.getElementById("hint");
   var target = null;
 
-  function setMain(text, href, disabled) {
-    main.textContent = text;
-    main.href = href;
-    main.classList.toggle("disabled", !!disabled);
-    if (disabled) main.setAttribute("aria-disabled", "true");
-    else main.removeAttribute("aria-disabled");
-  }
-  function setAlt(text, href) {
-    alt.textContent = text;
-    alt.href = href;
-    alt.hidden = false;
-  }
-
-  if (platform === "android" && ANDROID_URL) {
-    status.textContent = "Taking you to Google Play…";
-    setMain("Get it on Google Play", ANDROID_URL, false);
-    setAlt("App Store", IOS_URL);
-    target = ANDROID_URL;
-  } else if (platform === "android") {
-    // Android build still in review: no redirect, no dead link.
-    spin.style.display = "none";
-    status.textContent = "You’re early — good taste.";
-    setMain("Google Play — coming soon", "#", true);
-    setAlt("Get it on iPhone / Mac", IOS_URL);
-    soon.textContent = "MonkReader for Android is in review. This same link will open Google Play the moment it’s live — check back soon.";
+  bApple.href = IOS_URL;
+  if (ANDROID_URL) {
+    bPlay.href = ANDROID_URL;
+  } else {
+    bPlay.href = "#";
+    bPlay.classList.add("disabled");
+    bPlay.setAttribute("aria-disabled", "true");
+    soon.textContent = "Coming soon to Google Play — this same link will open it automatically once live.";
     soon.hidden = false;
-  } else if (platform === "desktop") {
-    spin.style.display = "none";
-    status.textContent = "Choose your store to continue.";
-    setMain("Get it on the App Store", IOS_URL, false);
-    if (ANDROID_URL) setAlt("Get it on Google Play", ANDROID_URL);
-    else { setAlt("Google Play — coming soon", "#"); alt.classList.add("disabled"); alt.setAttribute("aria-disabled", "true"); }
-  } else { // ios or mac — same listing, live since the Mac release
-    status.textContent = "Taking you to the App Store…";
-    setMain("Get it on the App Store", IOS_URL, false);
-    if (ANDROID_URL) setAlt("Google Play", ANDROID_URL);
-    target = IOS_URL;
   }
 
-  if (isInApp(ua) && platform !== "desktop") hint.hidden = false;
+  // Relevant store first, so the tap target is on top if auto-redirect is blocked.
+  if (android && ANDROID_URL) bPlay.parentNode.insertBefore(bPlay, bApple);
 
-  // ── Auto-redirect (phones only, short beat so the tap target exists
-  //    if an in-app browser blocks programmatic navigation) ──────
+  if (android && ANDROID_URL) {
+    status.textContent = "Taking you to Google Play…";
+    target = ANDROID_URL;
+  } else if (android) {
+    spin.style.display = "none";
+    status.textContent = "Coming soon to Google Play.";
+  } else if (applePhone) {
+    status.textContent = "Taking you to the App Store…";
+    target = IOS_URL;
+  } else {
+    spin.style.display = "none";
+    status.textContent = "Get MonkReader.";
+  }
+
+  if (isInApp(ua) && (applePhone || android)) hint.hidden = false;
+
   if (target && !noRedirect) {
     setTimeout(function () { location.replace(target); }, 450);
     setTimeout(function () {
       spin.style.display = "none";
-      status.textContent = "Not redirected? Tap the button below.";
+      status.textContent = "Not redirected? Tap below.";
     }, 2600);
   } else {
     spin.style.display = "none";
