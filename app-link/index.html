@@ -9,10 +9,10 @@
 
 <!--
   MONKREADER SMART LINK — one bio link for Instagram / YouTube / TikTok.
-  iPhone/iPad → App Store. Android → Google Play (once ANDROID_URL is set).
+  iPhone/iPad → App Store. Android → Google Play.
   Anything else → both badges, no redirect.
 
-  ANDROID LAUNCH: paste the Play Store URL into ANDROID_URL below. Only change needed.
+  Both stores are live; no further changes needed.
   TESTING: ?store=ios | ?store=android | ?store=desktop, ?noredirect=1 to preview.
   Deployed from the Privacy repo (GitHub Pages). Keep Marketing/post-kit/app-link/ in sync.
 -->
@@ -109,9 +109,8 @@
   "use strict";
 
   var IOS_URL = "https://apps.apple.com/app/monkreader/id6804973353";
-  // TODO(Android launch): paste the Play Store URL the day it goes live, e.g.
-  //   "https://play.google.com/store/apps/details?id=com.example.monkreader"
-  var ANDROID_URL = "";
+  // Google Play listing (live). iOS uses the App Store listing above.
+  var ANDROID_URL = "https://play.google.com/store/apps/details?id=com.uc.bolekani";
 
   function isAndroid(ua) { return /Android/i.test(ua || ""); }
   function isApplePhone(ua, maxTouch) {
